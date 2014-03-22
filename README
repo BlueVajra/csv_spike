@@ -1,3 +1,7 @@
-This is my personal experiment to understand CSvs.
+This is my personal experiment to understand CSVs.
 It is not finished, but it is a good start if you want to take a look. Much if it was absed on two blog posts.
 The second is here: http://www.sitepoint.com/guide-ruby-csv-library-part-2/
+
+You can run the auto_csv.rb file in terminal or RubyMine (press shift+ctrl+R) to see the output.
+
+Currently the program modifies the csv, so the "auto_second.csv" ahs the base csv file so you can copy the original csv file back to the original. I will automate this in an upcoming version.
