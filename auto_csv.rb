@@ -130,10 +130,13 @@ class AutoCSV
 
 
     CSV.open(@filepath, "wb") do |csv|
+      csv << @file.headers
       @file.each do |row|
         csv << row
       end
     end
+    #CSV.open(@filepath, @file, "w+",write_headers: true)
+
     load_file
     puts @file
     puts "\n"
@@ -162,21 +165,19 @@ class AutoCSV
     puts "\n"
   end
 
+  def reset_csv
+    puts "Check out auto.csv to see the changed file. If you would like to reset the csv file, type 'yes' at the prompt."
+    reset = gets.chomp
+    if reset == "yes"
+      @file = CSV.read("auto_second.csv", headers: true)
+      CSV.open(@filepath, "wb") do |csv|
+        csv << @file.headers
+        @file.each do |row|
+          csv << row
+        end
+      end
+    end
+  end
+
 end
 
-ct = AutoCSV.new("auto.csv")
-ct.p_csv
-ct.puts_csv
-ct.show_csv
-ct.p_row(1)
-ct.puts_row(1)
-ct.show_column("Year")
-ct.show_table_as_array
-ct.show_value(2, "Year")
-ct.show_headers
-ct.section2
-ct.add_new_row(2012, "BMW", "Z5", "Sweetness", "too much")
-ct.add_another_row(2014, "Subaru", "Outback", "Perfect for Boulder", 26000.00)
-ct.write_to_file
-#ct.delete_row(0)
-#ct.delete_column("Price")
