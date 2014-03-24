@@ -1,3 +1,5 @@
+require './auto_csv'
+
 # you can edit this file to play with the csv. running this file will run all the commands in a row. alternatively, you can load the auto_csv.rb file into IRB and play with it that way
 ct = AutoCSV.new("auto.csv")
 ct.p_csv

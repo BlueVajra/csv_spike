@@ -1,3 +1,9 @@
-This is my personal experiment to understand CSvs.
+This is my personal experiment to understand CSVs.
 It is not finished, but it is a good start if you want to take a look. Much if it was based on two blog posts.
 The second is here: http://www.sitepoint.com/guide-ruby-csv-library-part-2/
+
+You can run the auto.rb file in terminal or RubyMine (press shift+ctrl+R) to see the output. the class I use to test the ruby code is in auto_csv.rb
+
+Currently the program modifies the csv, you can now use the method "reset_csv" to reset the csv to its original state
+You can also manually copy the "auto_second.csv" back to the original.
+

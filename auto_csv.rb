@@ -129,7 +129,7 @@ class AutoCSV
     @file << [2018, "Audi", "Model T", "Second Test", 14000.00]
 
 
-    CSV.open(@filepath, "wb") do |csv|
+    CSV.open(@filepath, "w") do |csv|
       csv << @file.headers
       @file.each do |row|
         csv << row
@@ -170,7 +170,7 @@ class AutoCSV
     reset = gets.chomp
     if reset == "yes"
       @file = CSV.read("auto_second.csv", headers: true)
-      CSV.open(@filepath, "wb") do |csv|
+      CSV.open(@filepath, "w") do |csv|
         csv << @file.headers
         @file.each do |row|
           csv << row
